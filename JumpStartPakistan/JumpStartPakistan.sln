@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumpStartPakistan.Domain.Entities", "JumpStartPakistan.Domain\JumpStartPakistan.Domain.Entities.csproj", "{CF5EA80C-4371-439C-AF86-35B4C3D2D21E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumpStartPakistan.Web", "JumpStartPakistan.Web\JumpStartPakistan.Web.csproj", "{30A099E3-5835-4D17-A1D3-C98BE8AF0B44}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{E35BA13A-01AD-4966-802C-25C69BBAC6D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumpStartPakistan.Domain.Interfaces", "JumpStartPakistan.Domain.Interfaces\JumpStartPakistan.Domain.Interfaces.csproj", "{B25FF6F1-BFD0-495D-8D31-A42142E75589}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{945D6843-F9E6-430F-B766-AAC88A5FF2CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumpStartPakistan.Data", "JumpStartPakistan.Data\JumpStartPakistan.Data.csproj", "{7EC964D4-2934-4CD0-8A77-64D56F929DD7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{99910358-B199-42BD-9948-41607C984FC2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{D040F553-AD60-406C-987B-DAD33F29CF7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumpStartPakistan.Services.Interfaces", "JumpStartPakistan.Services.Interfaces\JumpStartPakistan.Services.Interfaces.csproj", "{E6504947-A525-448B-AFAA-B4DB133D5567}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF5EA80C-4371-439C-AF86-35B4C3D2D21E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF5EA80C-4371-439C-AF86-35B4C3D2D21E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF5EA80C-4371-439C-AF86-35B4C3D2D21E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF5EA80C-4371-439C-AF86-35B4C3D2D21E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30A099E3-5835-4D17-A1D3-C98BE8AF0B44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30A099E3-5835-4D17-A1D3-C98BE8AF0B44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30A099E3-5835-4D17-A1D3-C98BE8AF0B44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30A099E3-5835-4D17-A1D3-C98BE8AF0B44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B25FF6F1-BFD0-495D-8D31-A42142E75589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B25FF6F1-BFD0-495D-8D31-A42142E75589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B25FF6F1-BFD0-495D-8D31-A42142E75589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B25FF6F1-BFD0-495D-8D31-A42142E75589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EC964D4-2934-4CD0-8A77-64D56F929DD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC964D4-2934-4CD0-8A77-64D56F929DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EC964D4-2934-4CD0-8A77-64D56F929DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EC964D4-2934-4CD0-8A77-64D56F929DD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6504947-A525-448B-AFAA-B4DB133D5567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6504947-A525-448B-AFAA-B4DB133D5567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6504947-A525-448B-AFAA-B4DB133D5567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6504947-A525-448B-AFAA-B4DB133D5567}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CF5EA80C-4371-439C-AF86-35B4C3D2D21E} = {E35BA13A-01AD-4966-802C-25C69BBAC6D9}
+		{B25FF6F1-BFD0-495D-8D31-A42142E75589} = {E35BA13A-01AD-4966-802C-25C69BBAC6D9}
+		{30A099E3-5835-4D17-A1D3-C98BE8AF0B44} = {D040F553-AD60-406C-987B-DAD33F29CF7E}
+		{7EC964D4-2934-4CD0-8A77-64D56F929DD7} = {945D6843-F9E6-430F-B766-AAC88A5FF2CB}
+		{E6504947-A525-448B-AFAA-B4DB133D5567} = {99910358-B199-42BD-9948-41607C984FC2}
+	EndGlobalSection
+EndGlobal
