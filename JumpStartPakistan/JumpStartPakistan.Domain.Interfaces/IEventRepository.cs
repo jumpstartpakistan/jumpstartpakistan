@@ -13,6 +13,8 @@ namespace JumpStartPakistan.Domain.Interfaces
         IEnumerable<Event> Get();
         Event Get(int id);
 
+        void Add(Event nEvent);
+
         IEnumerable<Event> Find(Expression<Func<Event, bool>> predicate);
     }
 

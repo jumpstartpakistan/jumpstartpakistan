@@ -18,6 +18,13 @@
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.EventId)
 
+
+        @if (ViewBag.Error != null)
+        { 
+            <div class="alert alert-danger bs-alert-old-docs">
+      <strong>Heads up!</strong> These docs are for v2.3.2, which is no longer officially supported. <a href="http://getbootstrap.com">Check out the latest version of Bootstrap!</a>
+    </div>
+        }
         <div class="form-group">
             @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
             <div class="col-md-10">

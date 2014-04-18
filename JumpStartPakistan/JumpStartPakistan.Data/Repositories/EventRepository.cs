@@ -1,4 +1,5 @@
-﻿using JumpStartPakistan.Domain.Interfaces;
+﻿using JumpStartPakistan.Domain.Entities;
+using JumpStartPakistan.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,14 +26,14 @@ namespace JumpStartPakistan.Data.Repositories
         #endregion
 
 
-        IEnumerable<Domain.Entities.Event> IEventRepository.Get()
+        public IEnumerable<Event> Get()
         {
             var events = _ctx.Events.Include("Host").Include("Manager").Include("Organizer").ToList();
             events.ForEach(x => x.isAvailable = (x.Date > DateTime.Now) ? true : false);
             return events;
         }
 
-        Domain.Entities.Event IEventRepository.Get(int id)
+        public Event Get(int id)
         {
             var rEvent = _ctx.Events.Include("Host").Include("Manager").Include("Organizer").Where(x => x.EventId == id).FirstOrDefault();
             rEvent.isAvailable = (rEvent.Date > DateTime.Now) ? true : false;
@@ -40,11 +41,31 @@ namespace JumpStartPakistan.Data.Repositories
             return rEvent;
         }
 
-        IEnumerable<Domain.Entities.Event> IEventRepository.Find(System.Linq.Expressions.Expression<Func<Domain.Entities.Event, bool>> predicate)
+        public IEnumerable<Event> Find(System.Linq.Expressions.Expression<Func<Domain.Entities.Event, bool>> predicate)
         {
             var events = _ctx.Events.Where(predicate).ToList();
             events.ForEach(x => x.isAvailable = (x.Date > DateTime.Now) ? true : false);
             return events;
+        }
+
+        public void Add(Event nEvent)
+        {
+            //bool isDone = false;
+            var found = _ctx.Events.Where(x => x.EventId == nEvent.EventId).FirstOrDefault();
+            if (found == null)
+            {
+                found = _ctx.Events.Add(nEvent);
+
+            }
+            else
+            {
+                var entry = _ctx.Entry(found);
+                entry.OriginalValues.SetValues(found);
+                entry.CurrentValues.SetValues(nEvent);
+            }
+            
+            _ctx.SaveChanges();
+            //void isDone;
         }
     }
 }

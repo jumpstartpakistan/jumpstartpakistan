@@ -12,5 +12,6 @@ namespace JumpStartPakistan.Services.Interfaces
         IEnumerable<Event> GetEvents();
         IEnumerable<Event> GetEvents(bool isArchived);
         Event GetEventById(int id);
+        bool Add(Event nEvent);
     }
 }
