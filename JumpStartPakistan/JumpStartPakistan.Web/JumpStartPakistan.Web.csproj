@@ -159,7 +159,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\EventManagersController.cs" />
     <Compile Include="Areas\Admin\Controllers\EventsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrganizersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HostsController.cs" />
     <Compile Include="Areas\Admin\Models\Event.cs" />
     <Compile Include="Areas\Admin\Models\EventManager.cs" />
     <Compile Include="Areas\Admin\Models\Host.cs" />
@@ -188,6 +192,20 @@
     <Content Include="Areas\Admin\Views\Events\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Events\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Events\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\EventManagers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\EventManagers\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\EventManagers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\EventManagers\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Hosts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Hosts\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Hosts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Hosts\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Organizers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Organizers\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Organizers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Organizers\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -228,7 +246,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

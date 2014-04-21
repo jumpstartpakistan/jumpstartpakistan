@@ -39,7 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrganizerService.cs" />
+    <Compile Include="HostService.cs" />
+    <Compile Include="EventManagerService.cs" />
     <Compile Include="EventService.cs" />
+    <Compile Include="IOrganizerService.cs" />
+    <Compile Include="IHostService.cs" />
+    <Compile Include="IEventManagerService.cs" />
     <Compile Include="IEventService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

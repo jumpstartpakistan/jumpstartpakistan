@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace JumpStartPakistan.Services.Interfaces
 {
-    public interface IEventService
+    public interface IOrganizerService
     {
-        IEnumerable<Event> Get();
-        IEnumerable<Event> Get(bool isArchived);
-        Event Get(int id);
-        bool Add(Event nEvent);
+        IEnumerable<Organizer> Get();
+
+        Organizer Get(int id);
+        bool Add(Organizer organizer);
         bool Remove(int id);
     }
 }

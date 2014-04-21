@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace JumpStartPakistan.Domain.Interfaces
 {
-    public interface IEventRepository
+    public interface IOrganizerRepository
     {
-        IEnumerable<Event> Get();
-        Event Get(int id);
+        IEnumerable<Organizer> Get();
+        Organizer Get(int id);
 
-        void Add(Event nEvent);
+        void Add(Organizer nEvent);
 
         void Remove(int id);
-        
 
-        IEnumerable<Event> Find(Expression<Func<Event, bool>> predicate);
+
+        IEnumerable<Organizer> Find(Expression<Func<Organizer, bool>> predicate);
     }
 
    

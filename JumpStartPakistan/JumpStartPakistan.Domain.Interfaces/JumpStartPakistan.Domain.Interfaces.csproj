@@ -39,6 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IEventManagerRepository.cs" />
+    <Compile Include="IOrganizerRepository.cs" />
+    <Compile Include="IHostRepository.cs" />
     <Compile Include="IEventRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

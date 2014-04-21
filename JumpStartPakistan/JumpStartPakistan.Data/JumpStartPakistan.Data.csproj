@@ -49,6 +49,9 @@
     <Compile Include="JumpStartPakistanDataContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\EventManagerRepository.cs" />
+    <Compile Include="Repositories\OrganizerRepository.cs" />
+    <Compile Include="Repositories\HostRepository.cs" />
     <Compile Include="Repositories\EventRepository.cs" />
   </ItemGroup>
   <ItemGroup>

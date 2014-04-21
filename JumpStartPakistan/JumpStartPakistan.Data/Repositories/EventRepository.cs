@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace JumpStartPakistan.Data.Repositories
 {
+    /// <summary>
+    /// the isavailable logic should be part of eventservice not repo
+    /// </summary>
     public class EventRepository :IEventRepository
     {
         private readonly JumpStartPakistanDataContext _ctx;
@@ -67,5 +70,21 @@ namespace JumpStartPakistan.Data.Repositories
             _ctx.SaveChanges();
             //void isDone;
         }
+
+        public void Remove(int id)
+        {
+            //bool isDone = false;
+            var found = _ctx.Events.Where(x => x.EventId == id).FirstOrDefault();
+            if (found != null)
+            {
+                found = _ctx.Events.Remove(found);
+
+            }            
+
+            _ctx.SaveChanges();
+            //void isDone;
+        }
+
+
     }
 }

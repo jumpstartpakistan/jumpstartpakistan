@@ -8,48 +8,47 @@ using System.Web.Mvc;
 
 namespace JumpStartPakistan.Web.Areas.Admin.Controllers
 {
-    public class EventsController : Controller
+    public class OrganizersController : Controller
     {
-
-        private readonly IEventService _eventService;
-
-
-        public EventsController(): this( new EventService())
-        {
-
-        }
-
-        public EventsController(IEventService eventService)
-        {
-            _eventService = eventService;
-        }
-
-       
         
+        private readonly IOrganizerService _organizerService;
+
+
+        public OrganizersController(): this( new OrganizerService())
+        {
+
+        }
+
+        public OrganizersController(IOrganizerService organizerService)
+        {
+            _organizerService = organizerService;
+        }
+
+
         //
         // GET: /Admin/Events/
         public ActionResult Index(string msg)
         {
-            var events = _eventService.Get().OrderByDescending(x=>x.EventId);
+            var organizers = _organizerService.Get().OrderByDescending(x => x.OrganizerId);
             ViewBag.msg = msg;
-            return View(events);
+            return View(organizers);
         }
 
 
         public ActionResult Details(int id)
         {
-            var rEvent = _eventService.Get(id);
-            return View(rEvent);
+            var organizer = _organizerService.Get(id);
+            return View(organizer);
         }
 
         public ActionResult Edit(int id)
         {
-            var rEvent = _eventService.Get(id);
-            return View(rEvent);
+            var organizer = _organizerService.Get(id);
+            return View(organizer);
         }
 
         [HttpPost]
-        public ActionResult Edit(Event posted)
+        public ActionResult Edit(Organizer posted)
         {
             if (!ModelState.IsValid)
             {
@@ -58,10 +57,10 @@ namespace JumpStartPakistan.Web.Areas.Admin.Controllers
             }
 
             //save posted to db
-            bool completed = _eventService.Add(posted);
+            bool completed = _organizerService.Add(posted);
             if (completed)
             {
-                return RedirectToAction("details", new  { id = posted.EventId });
+                return RedirectToAction("details", new { id = posted.OrganizerId });
             }
             else
             {
@@ -71,25 +70,25 @@ namespace JumpStartPakistan.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Event newEvent)
+        public ActionResult Create(Organizer organizer)
         {
             //var rEvent = _eventService.GetEventById(id);
             if (!ModelState.IsValid)
             {
                 ViewBag["error"] = "validation fails";
-                return View(newEvent);
+                return View(organizer);
             }
-            bool completed = _eventService.Add(newEvent);
+            bool completed = _organizerService.Add(organizer);
             if (completed)
             {
-                return RedirectToAction("details", new { id = newEvent.EventId });
+                return RedirectToAction("details", new { id = organizer.OrganizerId });
             }
             else
             {
                 ViewBag["error"] = "can't save record into database";
-                return View(newEvent);
+                return View(organizer);
             }
-           
+
         }
 
         public ActionResult Create()
@@ -102,7 +101,7 @@ namespace JumpStartPakistan.Web.Areas.Admin.Controllers
         public ActionResult Delete(int id)
         {
             //var rEvent = _eventService.GetEventById(id);
-            bool isDone = _eventService.Remove(id);
+            bool isDone = _organizerService.Remove(id);
             return RedirectToAction("Index", new { msg = "record deleted successfully." });
         }
 	}

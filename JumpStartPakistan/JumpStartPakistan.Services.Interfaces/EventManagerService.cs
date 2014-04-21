@@ -9,43 +9,38 @@ using System.Threading.Tasks;
 
 namespace JumpStartPakistan.Services.Interfaces
 {
-    public class EventService : IEventService
+    public class EventManagerService : IEventManagerService
     {
-        private readonly IEventRepository _eventRepo;
+        private readonly IEventManagerRepository _eventManagerRepo;
 
-        public EventService()
-            : this(new EventRepository())
+        public EventManagerService()
+            : this(new EventManagerRepository())
         {
 
         }
 
-        public EventService(IEventRepository eventRepo)
+        public EventManagerService(IEventManagerRepository eventRepo)
         {
-            _eventRepo = eventRepo;
+            _eventManagerRepo = eventRepo;
         }
 
-        public IEnumerable<Event> Get()
+        public IEnumerable<EventManager> Get()
         {
-            return _eventRepo.Get();
+            return _eventManagerRepo.Get();
         }
 
-        public IEnumerable<Event> Get(bool isArchived)
+
+
+        public EventManager Get(int id)
         {
-
-            return _eventRepo.Find(x => x.isAvailable == isArchived);
-
+            return _eventManagerRepo.Get(id);
         }
 
-        public Event Get(int id)
-        {
-            return _eventRepo.Get(id);
-        }
-
-        public bool Add(Event nEvent)
+        public bool Add(EventManager nEvent)
         {
             bool isDone = false;
 
-            _eventRepo.Add(nEvent);
+            _eventManagerRepo.Add(nEvent);
             isDone = true;
 
             return isDone;
@@ -65,7 +60,7 @@ namespace JumpStartPakistan.Services.Interfaces
         {
             bool isDone = false;
 
-            _eventRepo.Remove(id);
+            _eventManagerRepo.Remove(id);
             isDone = true;
 
             return isDone;            
