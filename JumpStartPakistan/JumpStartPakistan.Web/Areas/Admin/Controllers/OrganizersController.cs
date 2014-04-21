@@ -94,7 +94,7 @@ namespace JumpStartPakistan.Web.Areas.Admin.Controllers
         public ActionResult Create()
         {
             //var rEvent = _eventService.GetEventById(id);
-            return View(new Event());
+            return View(new Organizer());
         }
 
 
