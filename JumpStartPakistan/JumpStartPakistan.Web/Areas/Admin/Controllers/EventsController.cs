@@ -112,6 +112,11 @@ namespace JumpStartPakistan.Web.Areas.Admin.Controllers
                 ViewBag["error"] = "validation fails";
                 return View(newEvent);
             }
+
+            newEvent.HostId = newEvent.HostId == 0 ? null : newEvent.HostId;
+            newEvent.OrganizerId = newEvent.OrganizerId == 0 ? null : newEvent.OrganizerId;
+            newEvent.ManagerId = newEvent.ManagerId == 0 ? null : newEvent.ManagerId;
+
             bool completed = _eventService.Add(newEvent);
             if (completed)
             {
@@ -128,6 +133,21 @@ namespace JumpStartPakistan.Web.Areas.Admin.Controllers
         public ActionResult Create()
         {
             //var rEvent = _eventService.GetEventById(id);
+            var hosts = _hostService.Get().ToList();
+            hosts.Insert(0, new Host { HostId = 0, Title = "select" });
+            var hostList = from host in hosts select new SelectListItem { Text = host.Title, Value = host.HostId.ToString() };
+            ViewBag.hostList = hostList;
+
+            var oraganizers = _organizerService.Get().ToList();
+            oraganizers.Insert(0, new Organizer { OrganizerId = 0, Title = "select" });
+            var organizerList = from o in oraganizers select new SelectListItem { Text = o.Title, Value = o.OrganizerId.ToString() };
+            ViewBag.organizerList = organizerList;
+
+            var managers = _eventManagerService.Get().ToList();
+            managers.Insert(0, new EventManager { ManagerId = 0, Name = "select" });
+            var managerList = from m in managers select new SelectListItem { Text = m.Name, Value = m.ManagerId.ToString() };
+            ViewBag.managerList = managerList;
+
             return View(new Event());
         }
 

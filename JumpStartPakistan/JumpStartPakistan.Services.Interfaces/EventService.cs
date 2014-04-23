@@ -26,19 +26,24 @@ namespace JumpStartPakistan.Services.Interfaces
 
         public IEnumerable<Event> Get()
         {
-            return _eventRepo.Get();
+            var events = _eventRepo.Get().ToList();
+            events.ForEach(x => x.isAvailable = (x.Date > DateTime.Now) ? true : false);
+            return events;
         }
 
         public IEnumerable<Event> Get(bool isArchived)
         {
 
-            return _eventRepo.Find(x => x.isAvailable == isArchived);
-
+            var events = _eventRepo.Find(x => x.isAvailable == isArchived).ToList();
+            events.ForEach(x => x.isAvailable = (x.Date > DateTime.Now) ? true : false);
+            return events;
         }
 
         public Event Get(int id)
         {
-            return _eventRepo.Get(id);
+            var evt =  _eventRepo.Get(id);
+            evt.isAvailable = evt.Date > DateTime.Now ? true : false;
+            return evt;
         }
 
         public bool Add(Event nEvent)

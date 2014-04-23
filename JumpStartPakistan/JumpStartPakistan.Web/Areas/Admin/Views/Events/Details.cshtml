@@ -19,6 +19,37 @@
             @Html.DisplayFor(model => model.Title)
         </dd>
 
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Host.Title)*@
+            @Html.DisplayName("Host")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Host.Title)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Organizer.Title)*@
+            @Html.DisplayName("Organizer")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organizer.Title)
+        </dd>
+
+        <dt>
+            
+                
+            @Html.DisplayName("Manager")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manager.Name)
+        </dd>
+
+
+
         <dt>
             @Html.DisplayNameFor(model => model.Summary)
         </dt>

@@ -32,14 +32,14 @@ namespace JumpStartPakistan.Data.Repositories
         public IEnumerable<Event> Get()
         {
             var events = _ctx.Events.Include("Host").Include("Manager").Include("Organizer").ToList();
-            events.ForEach(x => x.isAvailable = (x.Date > DateTime.Now) ? true : false);
+            //events.ForEach(x => x.isAvailable = (x.Date > DateTime.Now) ? true : false);
             return events;
         }
 
         public Event Get(int id)
         {
             var rEvent = _ctx.Events.Include("Host").Include("Manager").Include("Organizer").Where(x => x.EventId == id).FirstOrDefault();
-            rEvent.isAvailable = (rEvent.Date > DateTime.Now) ? true : false;
+            //rEvent.isAvailable = (rEvent.Date > DateTime.Now) ? true : false;
 
             return rEvent;
         }
@@ -47,7 +47,7 @@ namespace JumpStartPakistan.Data.Repositories
         public IEnumerable<Event> Find(System.Linq.Expressions.Expression<Func<Domain.Entities.Event, bool>> predicate)
         {
             var events = _ctx.Events.Where(predicate).ToList();
-            events.ForEach(x => x.isAvailable = (x.Date > DateTime.Now) ? true : false);
+            //events.ForEach(x => x.isAvailable = (x.Date > DateTime.Now) ? true : false);
             return events;
         }
 
