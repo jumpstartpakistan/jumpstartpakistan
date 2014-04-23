@@ -34,6 +34,11 @@ namespace JumpStartPakistan.Data
         public EventsMap()
         {
             HasKey(p => p.EventId);
+            //HasOptional(h => h.Host).WithOptionalPrincipal();
+            //HasOptional(o => o.Organizer).WithOptionalPrincipal();
+            //HasOptional(e => e.Manager).WithOptionalPrincipal();
+           
+            
 
             //HasMany(p => p.Orders);
         }
@@ -53,6 +58,7 @@ namespace JumpStartPakistan.Data
         public HostsMap()
         {
             HasKey(p => p.HostId);
+           
             //HasMany(p => p.Orders);
         }
     }

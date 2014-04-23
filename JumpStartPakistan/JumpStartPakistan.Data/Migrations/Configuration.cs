@@ -41,7 +41,7 @@ namespace JumpStartPakistan.Data.Migrations
                 new Event{ 
                     Date = DateTime.Now.AddDays(3), 
                     Details= "fast lahore best practices", 
-                    Host = hosts[3], 
+                    Host = hosts[0], 
                     Organizer=organizers[1], 
                     isActive=true,
                     isAvailable=true, 

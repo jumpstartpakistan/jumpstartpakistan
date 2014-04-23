@@ -54,7 +54,7 @@ namespace JumpStartPakistan.Data.Repositories
         public void Add(Event nEvent)
         {
             //bool isDone = false;
-            var found = _ctx.Events.Where(x => x.EventId == nEvent.EventId).FirstOrDefault();
+            var found = _ctx.Events.Include("Host").Include("Manager").Include("Organizer").Where(x => x.EventId == nEvent.EventId).FirstOrDefault();
             if (found == null)
             {
                 found = _ctx.Events.Add(nEvent);
@@ -65,6 +65,9 @@ namespace JumpStartPakistan.Data.Repositories
                 var entry = _ctx.Entry(found);
                 entry.OriginalValues.SetValues(found);
                 entry.CurrentValues.SetValues(nEvent);
+
+                //_ctx.Entry(found.Host).CurrentValues.SetValues(nEvent.Host);
+
             }
             
             _ctx.SaveChanges();

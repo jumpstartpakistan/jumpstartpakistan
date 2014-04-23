@@ -23,8 +23,12 @@ namespace JumpStartPakistan.Domain.Entities
         public bool isActive { get; set; }
         public bool isAvailable { get; set; }
         public EventManager Manager { get; set; }
+        public int? ManagerId { get; set; }
         public Organizer Organizer { get; set; }
+        public int? OrganizerId { get; set; }
         public Host Host { get; set; }
+        public int? HostId { get; set; }
+
         public string RegisterationLink { get; set; }
         public DateTime CreationDate { get; set; }
     }

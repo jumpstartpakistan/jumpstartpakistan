@@ -84,6 +84,12 @@ namespace JumpStartPakistan.Web.Areas.Admin.Controllers
                 return View(posted);
             }
 
+
+            posted.HostId = posted.HostId == 0 ? null : posted.HostId;
+            //posted.HostId = posted.Host.HostId == 0 ? null : (int?)posted.Host.HostId;
+            posted.ManagerId = posted.Manager.ManagerId == 0 ? null : (int?) posted.Manager.ManagerId;
+            posted.OrganizerId = posted.Organizer.OrganizerId == 0 ? null : (int?) posted.Organizer.OrganizerId;
+
             //save posted to db
             bool completed = _eventService.Add(posted);
             if (completed)

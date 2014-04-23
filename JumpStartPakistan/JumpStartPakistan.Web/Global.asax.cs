@@ -16,7 +16,7 @@ namespace JumpStartPakistan.Web
         protected void Application_Start()
         {
 
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<JumpStartPakistanDataContext, Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<JumpStartPakistanDataContext, Configuration>());
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
